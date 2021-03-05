@@ -12,5 +12,8 @@
 */
 
 Route::get('/', function () {
-    return view('welcome');
-});
+    return redirect()->route('login');
+})->name('root');
+
+Route::get('/login', 'LoginController@index')->name('login');
+
