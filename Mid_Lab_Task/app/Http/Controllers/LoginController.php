@@ -64,7 +64,7 @@ class LoginController extends Controller
         }
         else
         {
-            $request->session()->flash('errorMsg','Invalid Credentials');
+            $request->session()->flash('errorMsg','Invalid email/password');
 
             return Back();
         }

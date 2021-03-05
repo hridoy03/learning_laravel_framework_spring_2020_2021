@@ -11,6 +11,6 @@ class customer extends Model
     
     public $timestamps = true;
 
-    const date_added = 'date_added';
-    const last_added = 'last_added';
+    const CREATED_AT = 'date_added';
+    const UPDATED_AT = 'last_added';
 }

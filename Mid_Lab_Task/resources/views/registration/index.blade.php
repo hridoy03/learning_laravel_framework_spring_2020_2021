@@ -4,12 +4,10 @@
 </head>
 <body>
 <div align="center" style="width:100%;">
-
     <form action="" method="post">
-    @csrf
         <h1>Registration</h1>
         <table>
-
+        @csrf
             <tr>
                 <td>Full-Name:</td>
                 <td> <input type="text" name="full_name" id="" value="{{old('full_name')}}" ><br></td>  
@@ -53,14 +51,13 @@
         </table>
 
         <button style="margin:30px" type="submit">REGISTER</button>
-
-       
+        
         @foreach ($errors->all() as $error)
         <p>{{$error}}</p>
         @endforeach
     
     </form>
-    <a href="{{route('root')}}"><button style="margin:10px">Go Back</button></a>
+    <a href="{{route('root')}}">Go Back</a>
 </div>
     
 </body>
