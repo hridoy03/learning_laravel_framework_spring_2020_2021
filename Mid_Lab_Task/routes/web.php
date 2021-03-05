@@ -16,4 +16,4 @@ Route::get('/', function () {
 })->name('root');
 
 Route::get('/login', 'LoginController@index')->name('login');
-
+Route::post('/login', 'LoginController@varify');

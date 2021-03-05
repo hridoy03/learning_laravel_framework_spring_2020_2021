@@ -6,6 +6,7 @@
 <div align="center" style="width:100%;padding-top:40px;">
 <h1>CMS</h1>
     <form action="" method="post">
+    @csrf
     <table>
     <tr>
     <td>Email</td>
@@ -19,6 +20,11 @@
     </tr>
 
     <button style="margin-top:15px" type="submit">Login</button>
+
+    @foreach ($errors->all() as $error)
+    <p style="color:red">{{$error}}</p>
+    @endforeach
+
     </form>
     
 
