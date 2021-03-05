@@ -8,9 +8,4 @@ class admin extends Model
 {
     protected $table = 'admin';
     protected $primaryKey = 'id';
-    
-    public $timestamps = true;
-
-    const date_added = 'date_added';
-    const last_added = 'last_added';
 }
