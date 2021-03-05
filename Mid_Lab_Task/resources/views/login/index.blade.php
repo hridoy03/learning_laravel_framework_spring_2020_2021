@@ -25,6 +25,8 @@
     <p>{{$error}}</p>
     @endforeach
 
+    <a href="{{route('registration')}}"><h2>Registration</h2></a>
+
     </form>
     
 

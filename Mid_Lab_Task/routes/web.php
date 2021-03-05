@@ -19,3 +19,4 @@ Route::get('/login', 'LoginController@index')->name('login');
 Route::post('/login', 'LoginController@varify');
 Route::get('/userview', 'DashController@index')->name('dashboard');
 Route::get('/logout', 'LogoutController@index')->name('logout');
+Route::get('/registration', 'RegController@index')->name('registration');
