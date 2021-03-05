@@ -22,7 +22,7 @@
     <button style="margin-top:15px" type="submit">Login</button>
 
     @foreach ($errors->all() as $error)
-    <p style="color:red">{{$error}}</p>
+    <p>{{$error}}</p>
     @endforeach
 
     </form>
