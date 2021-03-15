@@ -23,5 +23,7 @@ Route::get('/registration', 'RegController@index')->name('registration');
 Route::post('/registration', 'RegController@varify');
 Route::get('/system/sales', 'SalesController@index')->name('sales');
 Route::get('/system/sales/physical_store', 'SalesController@physical')->name('sales.physical');
+Route::post('/system/sales/physical_store', 'SalesController@physicalVarify');
 Route::get('/system/sales/ecommerce_store', 'SalesController@ecommerce')->name('sales.ecommerce');
 Route::get('/system/sales/social_media_store', 'SalesController@social')->name('sales.social');
+Route::get('/system/sales/physical_store/sales_log', 'SalesController@physicalLogs')->name('physical.logs');
