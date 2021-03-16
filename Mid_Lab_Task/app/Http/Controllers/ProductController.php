@@ -60,12 +60,6 @@ class ProductController extends Controller
 
     }
 
-    public function uDelete(Request $request)
-    { 
-
-        return redirect()->route('product.upcoming');
-    }
-
     public function eUpdate(ProductUpdateRequest $request,$id)
     { 
 
@@ -135,6 +129,17 @@ class ProductController extends Controller
         }
 
         return redirect()->route('product.existing');
+    }
+
+    public function uDelete(Request $request,$id)
+    { 
+        $product = Product::find($id);
+        if($product)
+        {
+            $product->delete();
+        }
+
+        return redirect()->route('product.upcoming');
     }
 
 }
