@@ -19,7 +19,7 @@
         <td>{{$product->quantity}}</td>
         <td>{{substr($product->date_added,0,10)}}</td>
         <td><a href="{{route('product.existing.edit',['id'=> $product->id])}}"><button>Edit</button></a></td>
-        <td><a href="{{route('product.existing.delete')}}"><button >Delete</button></a></td>
+        <td><a onclick="return check()" href="{{route('product.existing.delete',['id'=> $product->id])}}"><button >Delete</button></a></td>
         <td><a href=""><button >View Details</button></a></td>
     </tr>
     @endforeach

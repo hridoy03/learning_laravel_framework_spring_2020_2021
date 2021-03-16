@@ -50,12 +50,6 @@ class ProductController extends Controller
 
     }
 
-    public function eDelete(Request $request)
-    { 
-
-        return redirect()->route('product.existing');
-    }
-
     public function uEdit(Request $request,$id)
     { 
         $product = Product::where('id',$id)
@@ -130,6 +124,17 @@ class ProductController extends Controller
             
         }
 
+    }
+
+    public function eDelete(Request $request,$id)
+    { 
+        $product = Product::find($id);
+        if($product)
+        {
+            $product->delete();
+        }
+
+        return redirect()->route('product.existing');
     }
 
 }

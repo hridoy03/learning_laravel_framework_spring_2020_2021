@@ -36,8 +36,7 @@ Route::get('/system/product_management','ProductController@index')->name('produc
 Route::get('/system/product_management/existing_products','ProductController@existingProduct')->name('product.existing');
 Route::get('/system/product_management/existing_products/edit/{id}','ProductController@eEdit')->name('product.existing.edit');
 Route::post('/system/product_management/existing_products/edit/{id}','ProductController@eUpdate');
-Route::get('/system/product_management/existing_products/delete','ProductController@eDelete')->name('product.existing.delete');
-
+Route::get('/system/product_management/existing_products/delete/{id}','ProductController@eDelete')->name('product.existing.delete');
 Route::get('/system/product_management/upcoming_products','ProductController@upcomingProduct')->name('product.upcoming');
 Route::get('/system/product_management/upcoming_products/edit/{id}','ProductController@uEdit')->name('product.upcoming.edit');
 Route::post('/system/product_management/existing_products/edit/{id}','ProductController@uUpdate');
