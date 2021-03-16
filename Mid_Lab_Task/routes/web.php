@@ -27,3 +27,6 @@ Route::post('/system/sales/physical_store', 'SalesController@physicalVarify');
 Route::get('/system/sales/ecommerce_store', 'SalesController@ecommerce')->name('sales.ecommerce');
 Route::get('/system/sales/social_media_store', 'SalesController@social')->name('sales.social');
 Route::get('/system/sales/physical_store/sales_log', 'SalesController@physicalLogs')->name('physical.logs');
+Route::get('/system/sales/physical_store/sales_log/download/reportSold','SalesController@physicalLogsSales')->name('sales.physical.logs.sales.download');
+Route::get('/system/sales/physical_store/sales_log/download/reportPending','SalesController@physicalLogsPending')->name('sales.physical.logs.pending.download');
+Route::post('/system/sales/physical_store/sales_log', 'SalesController@physicalLogsUpload');

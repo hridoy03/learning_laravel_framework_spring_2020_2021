@@ -4,11 +4,16 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
+use App\Http\Requests\ExcelFileRequest;
+use Maatwebsite\Excel\Facades\Excel;
 use App\pstore;
 use App\estore;
 use App\sstore;
 use App\Http\Requests\salesVarify;
 use DateTime;
+use App\Downloads\ExportSales;
+use App\Downloads\ExportPending;
+use App\Uploads\UploadReport;
 
 class SalesController extends Controller
 {
@@ -111,5 +116,25 @@ class SalesController extends Controller
         $request->session()->flash('Msg',"Added!");
 
         return Back();
+    }
+
+    public function physicalLogsSales(Request $request)
+    {
+        return Excel::download(new ExportSales, 'ReportSales.xlsx');
+        
+    }
+
+    public function physicalLogsPending(Request $request)
+    {
+        return Excel::download(new ExportPending, 'ReportPending.xlsx');
+        
+    }
+
+    public function physicalLogsUpload(FileRequest $request)
+    {
+        if(Excel::import(new PhysicalImport,$request->file))
+        {
+            return redirect()->route('sales.physical');
+        }
     }
 }
