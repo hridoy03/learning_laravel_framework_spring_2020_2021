@@ -34,7 +34,11 @@ Route::post('/system/sales/physical_store/sales_log', 'SalesController@physicalL
 Route::get('/system/product_management','ProductController@index')->name('product');
 
 Route::get('/system/product_management/existing_products','ProductController@existingProduct')->name('product.existing');
+Route::get('/system/product_management/existing_products/edit/{id}','ProductController@eEdit')->name('product.existing.edit');
+Route::get('/system/product_management/existing_products/delete','ProductController@eDelete')->name('product.existing.delete');
 
 Route::get('/system/product_management/upcoming_products','ProductController@upcomingProduct')->name('product.upcoming');
+Route::get('/system/product_management/upcoming_products/edit/{id}','ProductController@uEdit')->name('product.upcoming.edit');
+Route::get('/system/product_management/existing_products/delete','ProductController@uDelete')->name('product.upcoming.delete');
 
 Route::get('/system/product_management/add_product','ProductController@addProduct')->name('product.adding');

@@ -40,4 +40,36 @@ class ProductController extends Controller
         return view('product.addProduct');
     }
 
+    public function eEdit(Request $request,$id)
+    { 
+        $product = Product::where('id',$id)
+                    ->where('status','existing')            
+                    ->first();
+
+            return view('product.eEdit',compact('id','product'));
+
+    }
+
+    public function eDelete(Request $request)
+    { 
+
+        return redirect()->route('product.existing');
+    }
+
+    public function uEdit(Request $request,$id)
+    { 
+        $product = Product::where('id',$id)
+                    ->where('status','upcoming')            
+                    ->first();
+
+            return view('product.eEdit',compact('id','product'));
+
+    }
+
+    public function uDelete(Request $request)
+    { 
+
+        return redirect()->route('product.existing');
+    }
+
 }
