@@ -4,7 +4,7 @@
 <table border="3px solid black"> 
 @foreach ($products as $product)
     <tr>
-        <td>PRODUCT ID</td>
+        <td>PRODUCT Id</td>
         <td>PRODUCT NAME</td>
         <td> CATAGORY</td>
         <td>UNIT PRICE</td>

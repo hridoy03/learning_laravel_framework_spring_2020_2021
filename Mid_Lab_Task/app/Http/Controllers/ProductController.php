@@ -102,4 +102,34 @@ class ProductController extends Controller
 
     }
 
+    public function uUpdate(ProductUpdateRequest $request,$id)
+    { 
+
+        $product = Product::find($id);
+
+        if($product)
+        {
+            $product->product_name = $request->product_name;
+            $product->category = $request->category;
+            $product->unit_price = $request->unit_price;
+            $product->status = $request->status;
+            if($product->save())
+            {
+                return redirect()->route('product.upcoming');
+            }
+            else
+            {
+
+                return redirect()->route('product.upcoming.edit',['id'=>$id]);
+            }
+
+        }
+        else
+        {
+            return redirect()->route('product.upcoming.edit',['id'=>$id]);
+            
+        }
+
+    }
+
 }

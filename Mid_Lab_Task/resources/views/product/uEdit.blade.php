@@ -2,6 +2,7 @@
 <h1>Upcoming Product Edit</h1>
 
 <form action="" method="post">
+@csrf
     <table style="margin-top:3%">
         <tr>
             <td>Product Name</td>
@@ -36,6 +37,10 @@
         </tr>
 
     </table>
+    @foreach ($errors->all() as $err)
+        <p>{{$err}}</p>
+        @endforeach
+
 
     <button type="submit">Update</button>
 
