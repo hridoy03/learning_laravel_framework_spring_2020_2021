@@ -30,3 +30,11 @@ Route::get('/system/sales/physical_store/sales_log', 'SalesController@physicalLo
 Route::get('/system/sales/physical_store/sales_log/download/reportSold','SalesController@physicalLogsSales')->name('sales.physical.logs.sales.download');
 Route::get('/system/sales/physical_store/sales_log/download/reportPending','SalesController@physicalLogsPending')->name('sales.physical.logs.pending.download');
 Route::post('/system/sales/physical_store/sales_log', 'SalesController@physicalLogsUpload');
+
+Route::get('/system/product_management','ProductController@index')->name('product');
+
+Route::get('/system/product_management/existing_products','ProductController@existingProduct')->name('product.existing');
+
+Route::get('/system/product_management/upcoming_products','ProductController@upcomingProduct')->name('product.upcoming');
+
+Route::get('/system/product_management/add_product','ProductController@addProduct')->name('product.adding');
